@@ -1,0 +1,36 @@
+{
+  "description": "This NFT proves I've deployed an ERC271 Smart Contract on Goerli.",
+  "external_url": "https://alchemy.com/",
+  "image": "https://ipfs.filebase.io/ipfs/QmYrERS6rjQG99H2FxAZdQytFn5shhN6uaJxTMTTNeCZei",
+  "name": "Happy Unicorn",
+  "attributes": [
+    {
+      "trait_type": "Base",
+      "value": "Unicorn"
+    },
+    {
+      "trait_type": "Horn",
+      "value": "Big"
+    },
+    {
+      "trait_type": "Mouth",
+      "value": "Surprised"
+    },
+    {
+      "trait_type": "Level",
+      "value": 5
+    },
+    {
+      "trait_type": "Stamina",
+      "value": 1.4
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Token Standard",
+      "value": "ERC721"
+    }
+  ]
+}
