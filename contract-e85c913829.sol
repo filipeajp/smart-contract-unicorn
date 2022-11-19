@@ -4,18 +4,19 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts@4.8.0/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts@4.8.0/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts@4.8.0/token/ERC721/extensions/ERC721URIStorage.sol";
-import "@openzeppelin/contracts@4.8.0/access/Ownable.sol";
 import "@openzeppelin/contracts@4.8.0/utils/Counters.sol";
 
-contract Unicorn is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
+contract Unicorn is ERC721, ERC721Enumerable, ERC721URIStorage{
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
+    uint256 MAX_SUPPLY = 10000;
 
     constructor() ERC721("Unicorn", "UNI") {}
 
-    function safeMint(address to, string memory uri) public onlyOwner {
+    function safeMint(address to, string memory uri) public {
         uint256 tokenId = _tokenIdCounter.current();
+        require(tokenId <= MAX_SUPPLY, "I'm sorry, all NFTs have been minted.");
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
